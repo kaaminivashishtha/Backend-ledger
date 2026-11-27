@@ -23,6 +23,12 @@ const userSchema = new mongoose.Schema({
         required: [true, "Password is required"],
         minlength: [6 , "password should be contain more than 6 characters"],
         select: false // Exclude password from query results by default 
+    },
+    systemUser:{
+        type:Boolean ,
+        default: false,
+        immutable: true, 
+        select: false
     }
 }, {
     timestamps: true // Automatically add createdAt and updatedAt fields
